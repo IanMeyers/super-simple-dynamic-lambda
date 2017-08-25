@@ -1,0 +1,30 @@
+{
+	 "version": "1.0.0",
+	 "name": "Ian's First Event Engine",
+	 "region": "eu-west-1",
+	 "functionOutline": [
+	 	{
+		 	"function1" : {
+		 		"arn": "arn:aws:lambda:eu-west-1:887210671223:function:SimpleLambda1",
+		 		"invoke": "sync"
+		 	}
+	 	},
+	 	{
+		 	"function2": {
+		 		"arn": "arn:aws:lambda:eu-west-1:887210671223:function:SimpleLambda2:$LATEST",
+		 		"invoke": "sync",
+		 		"args": [
+		 			"Arg1","Arg2"
+		 		],
+		 		"children": [
+			 		{
+			 			"function2.1": {
+					 		"arn": "arn:aws:lambda:eu-west-1:887210671223:function:SimpleLambda2_1",
+					 		"invoke": "sync"
+			 			}
+			 		}
+		 		]
+		 	}
+	 	}
+	 ]
+}
